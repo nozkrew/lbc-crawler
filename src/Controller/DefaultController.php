@@ -1,16 +1,19 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+namespace App\Controller;
 
-/**
- * Description of DefaultController
- *
- * @author tmaire
- */
-class DefaultController {
-    //put your code here
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+
+class DefaultController extends Controller{
+    
+    /**
+     * @Route("/")
+     */
+    public function index(){
+        return $this->render('default/index.html.twig', array(
+            'number' => "5"
+        ));
+    }
+    
 }
