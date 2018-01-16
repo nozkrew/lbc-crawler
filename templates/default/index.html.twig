@@ -3,5 +3,30 @@
 {% block title %}Index{% endblock %}
 
 {% block body %}
-    Bonjour {{ number }}
+    {{form_start(form)}}
+    {{form_rest(form)}}
+    {{form_end(form)}}
+    
+    {% if lbc is not null %}
+        <dl>
+            <dt>Nombre d'annonces</dt>
+            <dd>{{lbc.total_ads}}</dd>
+            <dt>Annonce par page</dt>
+            <dd>{{lbc.ads_per_page}}</dd>
+            <dt>Total de pages</dt>
+            <dd>{{lbc.total_page}}</dd>
+            <dt>Localisation</dt>
+            <dd>{{lbc.location}}</dd>
+            <dt>Catégorie</dt>
+            <dd>{{lbc.category}}</dd>
+            <dt>Région</dt>
+            <dd>{{lbc.search_area}}</dd>
+        </dl>
+        
+        {% if formLbc is not null %}
+            {{form_start(formLbc)}}
+            {{form_rest(formLbc)}}
+            {{form_end(formLbc)}}
+        {% endif %}
+    {% endif %}
 {% endblock %}
