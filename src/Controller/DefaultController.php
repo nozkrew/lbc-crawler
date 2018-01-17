@@ -33,7 +33,7 @@ class DefaultController extends Controller{
         
         if ($form->isSubmitted() && $form->isValid()) {
             $url = $form->get('url')->getData();
-            $lbc = (new Lbc\GetFrom)->search($url, true);
+            $lbc = (new Lbc\GetFrom)->search($url);
             
             $formLbc = $this->createFormBuilder()
                     ->setAction($this->generateUrl("app_default_crawler"))
@@ -61,7 +61,8 @@ class DefaultController extends Controller{
     public function crawler(Request $request){
         $url = $request->request->get('form')['url'];
         
-        //Todo : récupérer les données
+        $lbc = (new Lbc\GetFrom)->search($url);
+        
     }
     
 }
