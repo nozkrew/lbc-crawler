@@ -6,6 +6,18 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
+        {% for message in app.session.flashbag.get('success') %}
+            <div>{{ message|raw }}</div>
+        {% endfor %}
+        {% for message in app.session.flashbag.get('info') %}
+            <div>{{ message|raw }}</div>
+        {% endfor %}
+        {% for message in app.session.flashbag.get('error') %}
+            <div>{{ message|raw }}</div>
+        {% endfor %}
+        {% for message in app.session.flashbag.get('warning') %}
+            <div>{{ message|raw }}</div>
+        {% endfor %}
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
