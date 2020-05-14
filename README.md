@@ -1,6 +1,6 @@
 # lbc-crawler
 
-Recupères la liste des annonces du site leboncoin à partir d'une recherche donnée
+Recupère la liste des annonces du site leboncoin à partir d'une recherche donnée
 
 Non maintenu
 ============
