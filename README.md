@@ -10,5 +10,7 @@ Installation
 ============
 
 __` git clone https://github.com/nozkrew/lbc-crawler `__
+
 __` cd lbc-crawler `__
+
 __` composer update `__
